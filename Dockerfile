@@ -18,4 +18,11 @@ RUN curl -sSL https://install.python-poetry.org | python3 - && \
 FROM base AS production
 COPY --from=build /root/.local /root/.local
 COPY --from=build /root/.config /root/.config
+COPY ./ /usr/src/
+
+RUN apt-get update && apt-get install -y \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+
 ENV PATH=/root/.local/bin:$PATH

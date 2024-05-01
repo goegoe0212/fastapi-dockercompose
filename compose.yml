@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # environment:
     logging:
       driver: "json-file"
       options:
