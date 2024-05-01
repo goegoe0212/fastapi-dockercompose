@@ -1,0 +1,7 @@
+services:
+  fastapi:
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+    # BASHを起動してコンテナ内で作業する
+    # /bin/sh: 1:stat: not found 

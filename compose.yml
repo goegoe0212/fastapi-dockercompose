@@ -1,0 +1,10 @@
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # environment:
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
