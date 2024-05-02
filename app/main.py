@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from settings.config import settings
+from routers import operation_check
 
 
 app = FastAPI(
@@ -12,7 +13,4 @@ app = FastAPI(
     redoc_url=None,
 )
 
-
-@app.get("/")
-def root():
-    return {"message": "Hello World"}
+app.include_router(operation_check.router, prefix=settings.prefix_url)
